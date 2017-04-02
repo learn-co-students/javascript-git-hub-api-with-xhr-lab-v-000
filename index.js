@@ -29,7 +29,7 @@ function getRepositories(username){
 
 function getCommits(item){
 	const username = item.dataset.username;
-	const repo = item.dataset.repo
+	const repo = item.dataset.repository;
 	console.log(item.dataset);
 	const req = new XMLHttpRequest();
 	req.addEventListener("load", displayCommits);
