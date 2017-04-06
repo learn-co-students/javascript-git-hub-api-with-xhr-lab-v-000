@@ -1,4 +1,8 @@
 describe('index', () => {
+  before(() => {
+    window.Handlebars = require('handlebars');
+  })
+
   describe('page', () => {
     it('has a form', () => {
       var form = document.getElementsByTagName("form")[0]
