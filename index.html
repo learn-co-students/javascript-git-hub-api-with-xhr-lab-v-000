@@ -22,10 +22,15 @@
     </head>
     <body>
     <main id="main">
+
     </main>
     <div class="flexbox-container">
       <div>
         <h3>Repositories</h3>
+        <form onsubmit="getRepositories();return false;">
+          <input type='text' name="username" id="username">
+          <input type="submit" value="Get Repositories" >
+        </form>
         <div id="repositories"></div>
       </div>
       <div>
