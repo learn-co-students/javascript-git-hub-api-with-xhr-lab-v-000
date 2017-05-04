@@ -22,8 +22,8 @@
     </head>
     <body>
     <main id="main">
-    <form onclick="getRepositories()">
-        Name:<input type="text" name="name" id="name-field">
+    <form onsubmit="getRepositories(); return false;">
+        Name:<input type="text" name="name" id="username">
         <input type="submit" value="Get Repositories">
     </form>
     </main>

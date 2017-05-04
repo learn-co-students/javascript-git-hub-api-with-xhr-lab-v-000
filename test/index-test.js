@@ -41,6 +41,7 @@ describe('index', () => {
   })
 
   describe('xhr functions', () => {
+      "use strict";
     let xhr
     let requests
     let el
