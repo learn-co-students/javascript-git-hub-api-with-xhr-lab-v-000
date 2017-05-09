@@ -2,19 +2,16 @@
 <html>
   <head>
     <title>JavaScript GitHub API with XHR</title>
-    <link rel="stylesheet" type="text/css" href="node_modules/mocha/mocha.css">
     <style>
        .flexbox-container {
          display: -ms-flex;
          display: -webkit-flex;
          display: flex;
        }
-
       .flexbox-container > div {
         width: 50%;
         padding: 10px;
       }
-
       .flexbox-container > div:first-child {
         margin-right: 20px;
       }
@@ -22,6 +19,10 @@
     </head>
     <body>
     <main id="main">
+      <form onsubmit="getRepositories();return false;">
+        <input type="text" id="username"><br>
+        <input type="submit">
+      </form>
     </main>
     <div class="flexbox-container">
       <div>
@@ -40,5 +41,6 @@
     <script src="node_modules/expect/umd/expect.min.js"></script>
     <script src="node_modules/sinon/pkg/sinon.js"></script>
     <script>mocha.setup('bdd');</script>
+    <script src="test/index-test.js"></script>
   </body>
 </html>
