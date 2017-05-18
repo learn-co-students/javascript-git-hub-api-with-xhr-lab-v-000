@@ -22,6 +22,11 @@
     </head>
     <body>
     <main id="main">
+      <form  onSubmit="getRepositories(this);return false;">
+        <label for="username">Username:</label>
+        <input  type="text" name="username" value="">
+        <input type="submit" value="Get Repos">
+      </form>
     </main>
     <div class="flexbox-container">
       <div>
