@@ -14,3 +14,25 @@ function getRepositories() {
   req.open("GET", `https://api.github.com/users/`+`${username}`+`/repos`)
   req.send()
 }
+
+function getCommits() {
+  const name = el.dataset.repo
+  const req = new XMLHttpRequest()
+  req.addEventListener("load", displayCommits);
+  req.open("GET", 'https://api.github.com/repos/:username/' + name + '/commits')
+  req.send()
+}
+
+function displayCommits() {
+  const commits = JSON.parse(this.responseText)
+  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.author.login + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
+  document.getElementById("commits").innerHTML = commitsList
+}
+
+function getBranches() {
+
+}
+
+function displayBranches() {
+
+}
