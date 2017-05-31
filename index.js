@@ -4,13 +4,11 @@ function getRepositories() {
   req.addEventListener("load", displayRepositories);
   req.open("GET", `https://api.github.com/users/${user}/repos`)
   req.send()
-  console.log(`https://api.github.com/users/${user}/repos`)
 }
 
 function displayRepositories(event, data) {
   var repos = JSON.parse(this.responseText)
-  console.log(repos)
-  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">'+ r.owner.login +'</a></li>').join('')}</ul>`
+  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">'+ r.owner.login +'</a>' + ` - <a href="${r.html_url}">repo</a>` + '</li>').join('')}</ul>`
   document.getElementById('repositories').innerHTML += repoList
 }
 
