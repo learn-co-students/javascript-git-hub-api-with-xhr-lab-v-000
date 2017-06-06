@@ -30,5 +30,5 @@ function displayCommits() {
 }
 
 function getCommitAuthor(commit) {
-  return (commit.author != null) ? commit.author.login : 'unk';
+  return ((commit.author != null) ? commit.author.login : 'unk') + ' - ' + commit.commit.author.name;
 }
