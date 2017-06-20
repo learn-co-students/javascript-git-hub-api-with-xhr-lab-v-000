@@ -19,7 +19,7 @@ function displayRepositories(){
 
 function getCommits(repo){
   const repoName = repo.dataset.repository
-  const username = repo.dataset.username
+  const username = repo.dataset.repoUsername
   debugger
   const url = "https://api.github.com/repos/" + username + "/" + repoName + "/commits"
   var req = new XMLHttpRequest()
@@ -37,7 +37,7 @@ function displayCommits(){
 
 function getBranches(repo){
   const repoName = repo.dataset.repository
-  const username = repo.dataset.username
+  const username = repo.dataset.repoUsername
   const url = "https://api.github.com/repos/" + username + "/" + repoName + "/branches"
   var req = new XMLHttpRequest()
   req.addEventListener("load", displayBranches)
