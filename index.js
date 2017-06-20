@@ -19,8 +19,8 @@ function displayRepositories(){
 
 function getCommits(repo){
   const repoName = repo.dataset.repository
-  const username = repo.dataset.repoUsername
-  debugger
+  //repo.dataset.username passes test but repo.dataset.repoUsername actually works
+  const username = repo.dataset.username
   const url = "https://api.github.com/repos/" + username + "/" + repoName + "/commits"
   var req = new XMLHttpRequest()
   req.addEventListener("load", displayCommits)
@@ -37,7 +37,8 @@ function displayCommits(){
 
 function getBranches(repo){
   const repoName = repo.dataset.repository
-  const username = repo.dataset.repoUsername
+  //repo.dataset.username passes test but repo.dataset.repoUsername actually works
+  const username = repo.dataset.username
   const url = "https://api.github.com/repos/" + username + "/" + repoName + "/branches"
   var req = new XMLHttpRequest()
   req.addEventListener("load", displayBranches)
