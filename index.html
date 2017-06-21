@@ -27,10 +27,20 @@
       <div>
         <h3>Repositories</h3>
         <div id="repositories"></div>
+
+        <form id="username">
+          <input type="text" value="Username">
+          <input type="submit" onclick="getRepositories()">
+        </form>
+
+
       </div>
       <div>
         <h3>Details</h3>
-        <div id="details"></div>
+        <div id="details">
+
+        </div>
+        <a href="#" onclick="displayCommits()">Display Commits </a>
       </div>
     </div>
     <script src="index.js"></script>
