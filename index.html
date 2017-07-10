@@ -22,10 +22,16 @@
     </head>
     <body>
     <main id="main">
+      <form onsubmit="return getRepositories()">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username" value=""><br>
+        <input type="button" onclick="return getRepositories()" value="Submit">
+      </form>
     </main>
     <div class="flexbox-container">
       <div>
         <h3>Repositories</h3>
+        <a href="#" onclick="getRepositories()">Get Repositories</a>
         <div id="repositories"></div>
       </div>
       <div>
