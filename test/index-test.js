@@ -1,3 +1,4 @@
+'use strict'
 describe('index', () => {
   describe('page', () => {
     it('has a form', () => {
