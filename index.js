@@ -6,8 +6,10 @@ function showRepositories(event, data) {
   document.getElementById("repositories").innerHTML = repoList
 }
 
-function getRepositories(username) {
+function getRepositories() {
   const req = new XMLHttpRequest()
+  let username = getUserName()
+  debugger
   req.addEventListener("load", showRepositories)
   req.open("GET", `https://api.github.com/users/${username}/repos`)
   req.send()
@@ -25,4 +27,9 @@ function getCommits(el) {
   req.addEventListener("load", showCommits);
   req.open("GET", 'https://api.github.com/repos/octocat/' + name + '/commits')
   req.send()
+}
+
+function getUserName() {
+  username = document.getElementById("username").value
+  return username
 }
