@@ -25,11 +25,13 @@
     </main>
     <div class="flexbox-container">
       <div>
-        <form id="username" class="" action="index.html" method="post">
-          <label for="username">Enter Username: </label><input type="text" name="username" value="">
+        <form id="uname" onsubmit="getRepositories()" >
+          <label for="username">Enter Username: </label>
+          <input id="username" type="text" name="username" value="">
+          <input type="submit" value="Get Repositories">
         </form>
         <h3>Repositories</h3>
-        <a href="#" onclick="getRepositories()">Get Repositories</a>
+        <!-- <a href="#" onclick="getRepositories()">Get Repositories</a> -->
 
         <div id="repositories"></div>
       </div>
