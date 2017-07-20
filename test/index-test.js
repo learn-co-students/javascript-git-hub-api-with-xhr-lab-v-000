@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 describe('index', () => {
   describe('page', () => {
     it('has a form', () => {
@@ -14,7 +14,7 @@ describe('index', () => {
       it('parses and displays json values', () => {
         var resp = { responseText: commitsData() }
         displayCommits.call(resp)
-        let el = document.getElementById("details")
+         el = document.getElementById("details")
         expect(el.innerHTML).toMatch(/Monalisa Octocat/)
         expect(el.innerHTML).toMatch(/octocat/)
         expect(el.innerHTML).toMatch(/Fix all the bugs/)
@@ -25,7 +25,7 @@ describe('index', () => {
       it('parses and displays json values', () => {
         var resp = { responseText: branchesData() }
         displayBranches.call(resp)
-        let el = document.getElementById("details")
+         el = document.getElementById("details")
         expect(el.innerHTML).toMatch(/master/)
       })
     })
@@ -33,7 +33,7 @@ describe('index', () => {
       it('parses and displays json values', () => {
         var resp = { responseText: reposData() }
         displayRepositories.call(resp)
-        let el = document.getElementById("repositories")
+         el = document.getElementById("repositories")
         expect(el.innerHTML).toMatch(/Hello-World/)
         expect(el.innerHTML).toMatch(/octocat/)
         expect(el.innerHTML).toMatch(/https:\/\/github.com\/octocat\/Hello-World/)
@@ -76,7 +76,9 @@ describe('index', () => {
 
     describe('getCommits', () => {
       it('calls out to Github', () => {
-        getCommits(el)
+        getCommits({ dataset: { repository: 'test-repo', username: 'octocat' } })
+        // getCommits(el)
+        debugger
         expect(requests.length).toBe(1)
         expect(requests[0].url).toBe('https://api.github.com/repos/octocat/test-repo/commits')
       })
