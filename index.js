@@ -1,35 +1,34 @@
-function showRepositories(event, data) {
+function displayRepositories(event, data) {
   // this is set to the XMLHttpRequest object that fired the event
   let repos = JSON.parse(this.responseText)
   console.log(repos)
-  debugger
-  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
+  const repoList = `<ul>${repos.map(r => '<li>' + r.name + '- <a href="'+ r.html_url +'"> URL </a> - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
   document.getElementById("repositories").innerHTML = repoList
 }
 
 function getRepositories() {
   const req = new XMLHttpRequest()
   let username = getUserName()
-  req.addEventListener("load", showRepositories)
+  req.addEventListener("load", displayRepositories)
   req.open("GET", `https://api.github.com/users/${username}/repos`)
   req.send()
 }
 
-function showCommits() {
+function displayCommits() {
   const commits = JSON.parse(this.responseText)
-  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.author.login + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
-  document.getElementById("commits").innerHTML = commitsList
+  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.author.login + ' - ' + commit.commit.author.name + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
+  document.getElementById("details").innerHTML = commitsList
 }
 
 function getCommits(el) {
   const name = el.dataset.repo
+  const username = getUserName()
   const req = new XMLHttpRequest()
-  req.addEventListener("load", showCommits);
-  req.open("GET", 'https://api.github.com/repos/octocat/' + name + '/commits')
+  req.addEventListener("load", displayCommits);
+  req.open("GET", `https://api.github.com/repos/${username}/` + name + '/commits')
   req.send()
 }
 
 function getUserName() {
-  username = document.getElementById("username").value
-  return username
+  return document.getElementById("username").value
 }
