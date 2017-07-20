@@ -14,7 +14,7 @@ describe('index', () => {
       it('parses and displays json values', () => {
         var resp = { responseText: commitsData() }
         displayCommits.call(resp)
-        el = document.getElementById("details")
+        let el = document.getElementById("details")
         expect(el.innerHTML).toMatch(/Monalisa Octocat/)
         expect(el.innerHTML).toMatch(/octocat/)
         expect(el.innerHTML).toMatch(/Fix all the bugs/)
@@ -25,7 +25,7 @@ describe('index', () => {
       it('parses and displays json values', () => {
         var resp = { responseText: branchesData() }
         displayBranches.call(resp)
-        el = document.getElementById("details")
+        let el = document.getElementById("details")
         expect(el.innerHTML).toMatch(/master/)
       })
     })
@@ -33,7 +33,7 @@ describe('index', () => {
       it('parses and displays json values', () => {
         var resp = { responseText: reposData() }
         displayRepositories.call(resp)
-        el = document.getElementById("repositories")
+        let el = document.getElementById("repositories")
         expect(el.innerHTML).toMatch(/Hello-World/)
         expect(el.innerHTML).toMatch(/octocat/)
         expect(el.innerHTML).toMatch(/https:\/\/github.com\/octocat\/Hello-World/)

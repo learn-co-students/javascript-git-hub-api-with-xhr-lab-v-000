@@ -1,4 +1,4 @@
-function displayRepositories(event, data) {
+function displayRepositories() {
   // this is set to the XMLHttpRequest object that fired the event
   let repos = JSON.parse(this.responseText)
   console.log(repos)
