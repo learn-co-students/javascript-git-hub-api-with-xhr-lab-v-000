@@ -21,6 +21,14 @@
     </style>
     </head>
     <body>
+
+      <h3> Please enter your UserName </h3>
+      <form onsubmit="getRepositories();return false;">
+        <input type="text" name="username" placeholder="username" id="username">
+         <input type="submit" value="Submit">
+         <div id="repositories"></div>
+      </form>
+
     <main id="main">
     </main>
     <div class="flexbox-container">
@@ -41,5 +49,8 @@
     <script src="node_modules/sinon/pkg/sinon.js"></script>
     <script>mocha.setup('bdd');</script>
     <script src="test/index-test.js"></script>
+
+
+
   </body>
 </html>
