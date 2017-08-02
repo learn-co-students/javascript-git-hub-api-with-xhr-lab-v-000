@@ -23,6 +23,10 @@
     <body>
     <main id="main">
     </main>
+    <form onsubmit="getRepositories(); return false;">
+      <label>Username: </label><input id="username" type="text">
+      <input type="submit">
+    </form>
     <div class="flexbox-container">
       <div>
         <h3>Repositories</h3>
@@ -30,7 +34,10 @@
       </div>
       <div>
         <h3>Details</h3>
-        <div id="details"></div>
+        <div id="details">
+          <div id="commits"></div>
+          <div id="branches"></div>
+        </div>
       </div>
     </div>
     <script src="index.js"></script>
