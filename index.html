@@ -22,10 +22,16 @@
     </head>
     <body>
     <main id="main">
+
     </main>
     <div class="flexbox-container">
       <div>
         <h3>Repositories</h3>
+        <!-- Create a form with a username field that calls a getRepositories function  -->
+          <form onsubmit="getRepositories();return false;">
+            Username: <input type="text" id="username">
+            <input type="submit" value="Submit">
+          </form>
         <div id="repositories"></div>
       </div>
       <div>
