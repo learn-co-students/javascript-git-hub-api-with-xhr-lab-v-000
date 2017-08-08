@@ -16,7 +16,7 @@
       }
 
       .flexbox-container > div:first-child {
-        margin-right: 20px;
+        margin-right: 10px;
       }
     </style>
     </head>
@@ -25,9 +25,17 @@
     </main>
     <div class="flexbox-container">
       <div>
+        <form id="username-form">
+          Username:<br>
+          <input type="text" id="username"><br>
+          <input type="submit" value="Get Repositories" id="get-repositories" onclick="getRepositories()">
+        </form>
+      </div>
+      <div>
         <h3>Repositories</h3>
         <div id="repositories"></div>
       </div>
+
       <div>
         <h3>Details</h3>
         <div id="details"></div>
