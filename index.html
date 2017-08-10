@@ -22,6 +22,10 @@
     </head>
     <body>
     <main id="main">
+      <form onsubmit="getRepositories();return false">
+        <input type="text" id="username"><br>
+        <input type="submit">
+      </form>
     </main>
     <div class="flexbox-container">
       <div>
@@ -30,7 +34,7 @@
       </div>
       <div>
         <h3>Details</h3>
-        <div id="details"></div>
+        <div id="details"></div> <!-- put commits and branches in details div -->
       </div>
     </div>
     <script src="index.js"></script>
