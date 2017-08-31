@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>JavaScript GitHub API with XHR</title>
-    <link rel="stylesheet" type="text/css" href="node_modules/mocha/mocha.css">
+    <!-- <link rel="stylesheet" type="text/css" href="node_modules/mocha/mocha.css"> -->
     <style>
        .flexbox-container {
          display: -ms-flex;
@@ -22,8 +22,15 @@
     </head>
     <body>
     <main id="main">
+      <form id="form"action= "#">
+        Username:<br>
+        <input type="text" id="username" placeholder="type username">
+        <br>
+        <input type="submit" value="Submit" onclick="getRepositories()">
+      </form>
     </main>
     <div class="flexbox-container">
+
       <div>
         <h3>Repositories</h3>
         <div id="repositories"></div>
@@ -35,11 +42,11 @@
     </div>
     <script src="index.js"></script>
     <!-- Open this file and call `mocha.run()` in console to run tests -->
-    <div id="mocha"></div>
+    <!-- <div id="mocha"></div>
     <script src="node_modules/mocha/mocha.js"></script>
     <script src="node_modules/expect/umd/expect.min.js"></script>
     <script src="node_modules/sinon/pkg/sinon.js"></script>
-    <script>mocha.setup('bdd');</script>
+    <script>mocha.setup('bdd');</script> -->
     <script src="test/index-test.js"></script>
   </body>
 </html>

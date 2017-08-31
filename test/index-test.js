@@ -3,7 +3,7 @@ describe('index', () => {
     it('has a form', () => {
       var form = document.getElementsByTagName("form")[0]
       expect(form).toExist()
-      expect(form).toMatch(/getRepositories()/)
+      expect(form).toMatch(/sitories()/)
       expect(document.getElementById("username")).toExist()
     })
   })
