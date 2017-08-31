@@ -1,8 +1,8 @@
 function displayRepositories(event, data){
   var repos = JSON.parse(this.responseText);
   console.log(repos)
-
-  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" data-repo="' + r.name + '" onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
+// username="' + r.owner.login +'"
+  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" username="' + r.owner.login + '" repository="' + r.owner.url + '" data-repo="' + r.name + '"  onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
 
   document.getElementById("repositories").innerHTML = repoList
 
@@ -31,15 +31,14 @@ function displayCommits(){
   const commits = JSON.parse(this.responseText)
   const username = document.getElementById("username").value
   console.log(commits)
-  console.log(username)
 
   const commitsList =
+`<h4> Login: ${commits[0].author.login} ***** Name: ${commits[0].commit.author.name} </h4>` +
 
-// `<ul>${commits.map(commit => '<li><strong>' + commit.author.login + '</strong> - ' +  commit.commit.author.name + commit.commit.message '</li>').join('')}</ul>`
+`<ul>${commits.map(commit => '<li>' + commit.commit.message + '</li>').join('')}</ul>`
 
-
-  
-  `${commits.map(commit => commit.author.login +  commit.commit.author.name + commit.commit.message )}`
+  //
+  // `${commits.map(commit => commit.author.login +  commit.commit.author.name + commit.commit.message )}`
 
   document.getElementById("details").innerHTML = commitsList
 }
