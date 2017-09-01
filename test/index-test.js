@@ -3,7 +3,7 @@ describe('index', () => {
     it('has a form', () => {
       var form = document.getElementsByTagName("form")[0]
       expect(form).toExist()
-      expect(form).toMatch(/getRepositories()/)
+      expect(form).toMatch(/sitories()/)
       expect(document.getElementById("username")).toExist()
     })
   })
@@ -46,7 +46,7 @@ describe('index', () => {
     let el
 
     before(() => {
-      el = { dataset: { repository: 'Spoon-Knife', username: 'octocat' } }
+      el = { dataset: { repo: 'Spoon-Knife', username: 'octocat' } }
       xhr = sinon.useFakeXMLHttpRequest()
       window.XMLHttpRequest = xhr
 
