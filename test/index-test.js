@@ -28,10 +28,12 @@ describe('index', () => {
         expect(el.innerHTML).toMatch(/master/)
       })
     })
-    describe('displayRepositories', () => {
+    // describe('displayRepositories', () => {
+    describe('showRepositories', () => {
       it('parses and displays json values', () => {
         var resp = { responseText: reposData() }
-        displayRepositories.call(resp)
+        // displayRepositories.call(resp)
+        showRepositories.call(resp)
         el = document.getElementById("repositories")
         expect(el.innerHTML).toMatch(/Hello-World/)
         expect(el.innerHTML).toMatch(/octocat/)
@@ -46,7 +48,7 @@ describe('index', () => {
     let el
 
     before(() => {
-      el = { dataset: { repository: 'Spoon-Knife', username: 'octocat' } }
+      el = { dataset: { repo: 'Spoon-Knife', username: 'octocat' } }
       xhr = sinon.useFakeXMLHttpRequest()
       window.XMLHttpRequest = xhr
 
