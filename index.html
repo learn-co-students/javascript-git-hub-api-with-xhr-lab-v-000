@@ -25,12 +25,23 @@
     </main>
     <div class="flexbox-container">
       <div>
+        <h3>Username</h3>
+        <form class="usernameForm" onsubmit="getRepositories();">
+          Username: <input type="text" id="username">
+          <input type="submit">
+        </form>
+      </div>
+      <div>
         <h3>Repositories</h3>
         <div id="repositories"></div>
       </div>
       <div>
         <h3>Details</h3>
         <div id="details"></div>
+      </div>
+      <div>
+        <h3>branches</h3>
+        <div id="branches"></div>
       </div>
     </div>
     <script src="index.js"></script>
