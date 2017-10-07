@@ -1,7 +1,6 @@
 const root = "https://api.github.com/";
 
 function displayRepositories(event, data) {
-
   var repos = JSON.parse(this.responseText);
   console.log(this.responseText);
   const repoList = `<ul>${repos.map( r =>
