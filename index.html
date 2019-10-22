@@ -18,10 +18,19 @@
       .flexbox-container > div:first-child {
         margin-right: 20px;
       }
+
+      li a {
+        display: block
+      }
     </style>
     </head>
     <body>
     <main id="main">
+      <form onsubmit="getRepositories();return false;">
+        <label for="username">Username</label>
+        <input id="username" type="text">
+        <input type="submit" value="Submit">
+      </form>
     </main>
     <div class="flexbox-container">
       <div>
